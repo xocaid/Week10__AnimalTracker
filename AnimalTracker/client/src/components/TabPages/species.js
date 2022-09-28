@@ -42,11 +42,12 @@ function Species() {
             <td> {singSpecies.conservation_status}</td>
             <td> {singSpecies.created_on}</td>
             <td><button>Delete</button></td>
+            <td><button>Edit</button></td>
           </tr>
         ))}
         </tbody>
   </table>
-      <Species Form addSpecies={addSpecies} />
+      <SpeciesForm addSpecies={addSpecies} />
     </div>
   );
 }

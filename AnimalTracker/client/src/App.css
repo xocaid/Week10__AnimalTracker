@@ -27,6 +27,11 @@
 .App-link {
   color: #61dafb;
 }
+/* Delete Icon by class name */
+.trash-icon{
+  height: 5%;
+  width: 5%;
+  }
 
 @keyframes App-logo-spin {
   from {
