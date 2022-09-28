@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Form from './form';
+import SpeciesForm from '../speciesForm';
 
 function Species() {
   const [species, setSpecies] = useState([]);
@@ -27,6 +27,10 @@ function Species() {
             <th>Species Name</th>
             <th>Type</th>
             <th> Population</th>
+            <th>Conservation Status </th>
+            <th>Created On </th>
+            <th>Delete Placeholder</th>
+
           </tr>
         </thead>
         <tbody>
@@ -35,11 +39,14 @@ function Species() {
             <td>{singSpecies.name} </td>
             <td>{singSpecies.type} </td>
             <td> {singSpecies.population}</td>
+            <td> {singSpecies.conservation_status}</td>
+            <td> {singSpecies.created_on}</td>
+            <td><button>Delete</button></td>
           </tr>
         ))}
         </tbody>
   </table>
-      <Form addSpecies={addSpecies} />
+      <Species Form addSpecies={addSpecies} />
     </div>
   );
 }

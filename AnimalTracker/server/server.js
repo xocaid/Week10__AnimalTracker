@@ -9,6 +9,7 @@ import speciesRouter from "./routes/species.js";
 import individualsRouter from "./routes/individuals.js";
 import sightingsRouter from "./routes/sightings.js";
 
+
 const app = express();
 const PORT = 5001;
 
@@ -22,7 +23,5 @@ app.use('/sightings', (sightingsRouter));
 app.get('/', (req, res) => {
   res.json('This is the BACKEND.')
 });
-
-
 
 app.listen(PORT, () => console.log(`Server is running on port: ${PORT}.`));

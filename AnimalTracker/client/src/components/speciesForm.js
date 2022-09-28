@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Form = (props) => {
+const SpeciesForm = (props) => {
   const [speciesForm, setSpeciesForm] = useState({
     name: "",
     type: "",
@@ -99,4 +99,4 @@ const Form = (props) => {
   );
 };
 
-export default Form;
+export default SpeciesForm;
