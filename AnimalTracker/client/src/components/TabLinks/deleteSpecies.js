@@ -9,7 +9,7 @@ const handleDeleteSpecies = (e) => {
   deleteSpeciesCallback(deleteSpeciesId);
   setSpeciesId('');
 }
-
+//The delete information below is still needed whether delete (in Parent Component) is a button/icon because it needs an identifier.
   return (
     <div>
       <h3>Delete Species</h3>
