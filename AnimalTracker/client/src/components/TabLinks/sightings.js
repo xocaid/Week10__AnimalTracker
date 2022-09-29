@@ -116,7 +116,7 @@ const Sightings = () => {
       <h2>Sightings Page</h2>
       <div>
         <h3>All Sightings</h3>
-        <table class="sightings-table">
+        <table className="sightings-table">
           <thead>
             <tr>
               <th>ID</th>
@@ -127,7 +127,7 @@ const Sightings = () => {
               <th>Created On</th>
               <th>Email</th>
               <th></th>
-              <th></th>
+              <th>Edit Placeholder</th>
             </tr>
           </thead>
           <tbody>
@@ -136,13 +136,15 @@ const Sightings = () => {
               return (
                 <tr key={index}>
                   <td>{sighting.id} </td>
-                  <td> {sighting.date_time} </td>
+                  {/* <td>{sighting.date_time} </td> */}
+                  <td>{new Date(sighting.date_time).toLocaleString()}</td>
                   <td>{sighting.location} </td>
                   <td>{sighting.healthy === true ? "True" : "False"} </td>
                   <td>{sighting.individual_id} </td>
-                  <td>{sighting.created_on} </td>
+                  {/* <td>{sighting.created_on} </td> */}
+                  <td>{new Date(sighting.created_on).toLocaleString()}</td>
                   <td>{sighting.email} </td>
-                  <td><img src={trash} class="trash-icon" onClick={() => handleDeleteSightings(sighting.id)} /></td>
+                  <td><img src={trash} className="trash-icon" onClick={() => handleDeleteSightings(sighting.id)} /></td>
                   <td><button>Edit</button></td>
                 </tr>
               );
@@ -175,7 +177,7 @@ const Sightings = () => {
 
               <label>Date/Time: </label>
               <input
-                type="datetime"
+                type="date"
                 id="editDateTime"
                 value={state.date_time}
                 onChange={(e) =>

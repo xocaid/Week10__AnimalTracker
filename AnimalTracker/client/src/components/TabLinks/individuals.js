@@ -94,7 +94,7 @@ const Individuals = () => {
       <h2>Individuals Page</h2>
       <div>
         <h3>All Individuals</h3>
-        <table class="individuals-table">
+        <table className="individuals-table">
           <thead>
             <tr>
               <th>ID</th>
@@ -102,7 +102,7 @@ const Individuals = () => {
               <th>Seen On</th>
               <th>Species ID</th>
               <th></th>
-              <th></th>
+              <th>Edit Placeholder</th>
             </tr>
           </thead>
           <tbody>
@@ -114,7 +114,7 @@ const Individuals = () => {
                   <td> {individual.nick_name} </td>
                   <td>{individual.seen_on} </td>
                   <td>{individual.species_id} </td>
-                  <td><img src={trash} class="trash-icon" onClick={() => handleDeleteIndividuals(individual.id)} /></td>
+                  <td><img src={trash} className="trash-icon" onClick={() => handleDeleteIndividuals(individual.id)} /></td>
                   <td><button>Edit</button></td>
                 </tr>
               );
