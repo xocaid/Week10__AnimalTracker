@@ -175,7 +175,7 @@ const Sightings = () => {
 
               <label>Date/Time: </label>
               <input
-                type="datetime-local"
+                type="datetime"
                 id="editDateTime"
                 value={state.date_time}
                 onChange={(e) =>

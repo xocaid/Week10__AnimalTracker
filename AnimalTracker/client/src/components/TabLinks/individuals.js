@@ -129,7 +129,7 @@ const Individuals = () => {
               <input
                 type="text"
                 id="editId"
-                placeholder="Individual ID"
+                placeholder="Individuals ID"
                 value={state.id}
                 //Dispatch fx: dispatches an Action Object; when you update the state, call dispatch fx with Action Object
                 //State is update by eventHandler or completing fetch request
@@ -161,7 +161,7 @@ const Individuals = () => {
 
               <label>Seen On: </label>
               <input
-                type="text"
+                type="datetime-local"
                 id="editSeenOn"
                 placeholder="Seen On"
                 value={state.seen_on}
@@ -182,7 +182,7 @@ const Individuals = () => {
                 value={state.species_id}
                 onChange={(e) =>
                   dispatch({
-                    type: "editDescription",
+                    type: "editSpeciesId",
                     payload: e.target.value,
                   })
                 }

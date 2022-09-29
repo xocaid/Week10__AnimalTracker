@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
   
   try{
   const createdIndividuals = await db.one(
-    'INSERT INTO species(id, nick_name, seen_on, species_id) VALUES($1, $2, $3, $4) RETURNING *',
+    'INSERT INTO individuals(id, nick_name, seen_on, species_id) VALUES($1, $2, $3, $4) RETURNING *',
     [individuals.id, individuals.nick_name, individuals.seen_on, individuals.species_id],
   );
   console.log(createdIndividuals);
