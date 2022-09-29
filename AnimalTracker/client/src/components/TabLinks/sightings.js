@@ -144,7 +144,7 @@ const Sightings = () => {
                   {/* <td>{sighting.created_on} </td> */}
                   <td>{new Date(sighting.created_on).toLocaleString()}</td>
                   <td>{sighting.email} </td>
-                  <td><img src={trash} className="trash-icon" onClick={() => handleDeleteSightings(sighting.id)} /></td>
+                  <td><img src={trash} className="trash-icon" alt = "trash-icon" onClick={() => handleDeleteSightings(sighting.id)} /></td>
                   <td><button>Edit</button></td>
                 </tr>
               );

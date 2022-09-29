@@ -3,6 +3,7 @@ import Router from "express";
 
 const router = Router();
 
+//GET Request - Individuals
 router.get("/", async (req, res) => {
   try {
     const individuals = await db.any("SELECT * FROM individuals ORDER BY id", [
@@ -14,7 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// POST Request
+// POST Request - Individuals
 router.post('/', async (req, res) => {
   const individuals = {
     id: req.body.id,
@@ -36,8 +37,8 @@ router.post('/', async (req, res) => {
   }
 });
 
-/* Delete users listing. */
 
+//DELETE Request - Individuals
   router.delete("/:id", async (req, res) => {
     // : acts as a placeholder
   const individualsId = req.params.id;

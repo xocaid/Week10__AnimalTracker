@@ -114,7 +114,7 @@ const Individuals = () => {
                   <td> {individual.nick_name} </td>
                   <td>{individual.seen_on} </td>
                   <td>{individual.species_id} </td>
-                  <td><img src={trash} className="trash-icon" onClick={() => handleDeleteIndividuals(individual.id)} /></td>
+                  <td><img src={trash} className="trash-icon" alt = "trash-icon"onClick={() => handleDeleteIndividuals(individual.id)} /></td>
                   <td><button>Edit</button></td>
                 </tr>
               );

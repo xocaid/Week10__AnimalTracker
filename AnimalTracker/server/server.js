@@ -8,6 +8,7 @@ import db from "./db/db-connection.js";
 import speciesRouter from "./routes/species.js";
 import individualsRouter from "./routes/individuals.js";
 import sightingsRouter from "./routes/sightings.js";
+import joinTableRouter from "./routes/joinTable.js";
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 app.use('/species', (speciesRouter));
 app.use('/individuals', (individualsRouter));
 app.use('/sightings', (sightingsRouter));
+app.use('/joinTable', (joinTableRouter));
 
 //ROUTE for index
 app.get('/', (req, res) => {

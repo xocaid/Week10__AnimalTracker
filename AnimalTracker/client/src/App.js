@@ -12,6 +12,7 @@ import Sightings from './components/TabLinks/sightings';
 
 
 function App() {
+
   return (
     <>
       <Header />

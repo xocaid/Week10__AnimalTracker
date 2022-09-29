@@ -53,7 +53,7 @@ function Species() {
             <td> {singSpecies.conservation_status}</td>
             <td> {singSpecies.created_on}</td>
             {/* <td><button onClick={() => handleDeleteSpecies1(singSpecies.id)}>Delete User</button></td> */}
-            <td><img src={trash} className="trash-icon" onClick={() => handleDeleteSpeciesP(singSpecies.id)} /></td>
+            <td><img src={trash} className="trash-icon" alt = "trash-icon" onClick={() => handleDeleteSpeciesP(singSpecies.id)} /></td>
             <td><button>Edit</button></td>
           </tr>
         ))}
