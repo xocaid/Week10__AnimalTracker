@@ -36,4 +36,17 @@ router.post('/', async (req, res) => {
   }
 });
 
+/* Delete users listing. */
+
+  router.delete("/:id", async (req, res) => {
+    // : acts as a placeholder
+  const speciesId = req.params.id;
+  try {
+  await db.none("DELETE FROM species WHERE id=$1", [speciesId]);
+  res.send({ status: "success" });
+  } catch (e) {
+  return res.status(400).json({ e });
+  }
+});
+
 export default router;

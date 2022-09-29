@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Layout = () => {
+const LinkRoutes = () => {
   return (
     <>
       <div>
@@ -18,4 +18,4 @@ const Layout = () => {
     </>
   )
 };
-export default Layout;
+export default LinkRoutes;

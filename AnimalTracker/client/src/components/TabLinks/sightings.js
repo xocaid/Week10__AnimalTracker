@@ -77,35 +77,36 @@ const Sightings = () => {
   //ADD NEW EVENT  - EVENT HANDLER
   const handleAddSightings = async (e) => {
     e.preventDefault();
-    const newIndividuals = {
+    const newSightings = {
       id: state.id,
       nick_name: state.nick_name,
       seen_on: state.seen_on,
       species_id: state.species_id
     };
 
-    const response = await fetch('http://localhost:5001/individuals', {
+    const response = await fetch('http://localhost:5001/sightings', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newIndividuals)
+      body: JSON.stringify(newSightings)
     });
     const content = await response.json();
     setSightings([...sightings, content]);
     dispatch({ type: 'clearForm' })
   };
 
-  // //DELETE EVENT  - EVENT HANDLER
-  // const handleDeleteIndividuals = async (deleteIndividualsCallback) => {
-  //   const response = await fetch(`http://localhost:4000/events/${deleteIndividualsCallback}`, {
-  //     method: 'DELETE',
-  //   })
-  //   await response.json();
-  //   const deleteIndividualsFunction = individuals.filter((i) => i.id !== deleteIndividualsCallback);
-  //   setIndividuals(deleteIndividualsFunction);
-  // }
+  //DELETE SIGHTINGS - EVENT HANDLER
+  const handleDeleteSightings = async (deleteSightingsCallback) => {
+    const response = await fetch(`http://localhost:5001/sightings/${deleteSightingsCallback}`, {
+      method: 'DELETE',
+    })
+    await response.json();
+    const deleteSightingssFunction = sightings.filter((i) => i.id !== deleteSightingsCallback);
+    setSightings(deleteSightingssFunction);
+  };
+
 
   return (
     <section className="sightings-page">
@@ -134,12 +135,11 @@ const Sightings = () => {
                   <td>{sighting.id} </td>
                   <td> {sighting.date_time} </td>
                   <td>{sighting.location} </td>
-                  <td>{sighting.healthy} </td>
+                  <td>{sighting.healthy === true ? "True" : "False"} </td>
                   <td>{sighting.individual_id} </td>
                   <td>{sighting.created_on} </td>
                   <td>{sighting.email} </td>
-                  {/* <td><img src={trash} class="trash-icon" onClick={() => handleDeleteIndividuals(event.id)} /></td> */}
-                  <td><img src={trash} class="trash-icon" /></td>
+                  <td><img src={trash} class="trash-icon" onClick={() => handleDeleteSightings(sighting.id)} /></td>
                   <td><button>Edit</button></td>
                 </tr>
               );
@@ -147,7 +147,7 @@ const Sightings = () => {
           </tbody>
         </table>
         <div className="addsightingsdiv">
-          <h3>Add Individuals</h3>
+          <h3>Add Sightings</h3>
           <form id="add-sightings" action="#" onSubmit={handleAddSightings}>
             <fieldset>
               <label>ID: </label>
@@ -172,7 +172,7 @@ const Sightings = () => {
 
               <label>Date/Time: </label>
               <input
-                type="text"
+                type="datetime-local"
                 id="editDateTime"
                 value={state.date_time}
                 onChange={(e) =>
@@ -255,9 +255,9 @@ const Sightings = () => {
                 }
               />
               <br />
-              
+
             </fieldset>
-            <input type="submit" value="Add Individual" />
+            <input type="submit" value="Add Sighting" />
           </form>
         </div>
       </div>

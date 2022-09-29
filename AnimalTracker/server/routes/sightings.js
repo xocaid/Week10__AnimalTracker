@@ -37,4 +37,17 @@ router.post('/', async (req, res) => {
   }
 });
 
+/* Delete users listing. */
+
+router.delete("/:id", async (req, res) => {
+  // : acts as a placeholder
+const sightingsId = req.params.id;
+try {
+await db.none("DELETE FROM sightings WHERE id=$1", [sightingsId]);
+res.send({ status: "success" });
+} catch (e) {
+return res.status(400).json({ e });
+}
+});
+
 export default router;
