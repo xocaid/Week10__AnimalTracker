@@ -12,11 +12,13 @@ function Species() {
           });
   }, []);
 
+  //ADD SPECIES
   const addSpecies = (newSingularSpecies) => {
-    //console.log(newStudent);
-    //postStudent(newStudent);
     setSpecies((species) => [...species, newSingularSpecies]);
   };
+
+
+    // const [editingUserId, setEditingUserId] = useState();
 
   return (
     <div className="species">
@@ -29,7 +31,7 @@ function Species() {
             <th> Population</th>
             <th>Conservation Status </th>
             <th>Created On </th>
-            <th>Delete Placeholder</th>
+            <th>Edit Placeholder</th>
 
           </tr>
         </thead>
@@ -41,7 +43,6 @@ function Species() {
             <td> {singSpecies.population}</td>
             <td> {singSpecies.conservation_status}</td>
             <td> {singSpecies.created_on}</td>
-            <td><button>Delete</button></td>
             <td><button>Edit</button></td>
           </tr>
         ))}
