@@ -26,7 +26,7 @@ const reducer = (state, action) => {
 
     case 'editCreatedOn':
       console.log('Logged if the editCreatedOn action is being dispatched');
-      return { ...state, healthy: action.payload };
+      return { ...state, created_on: action.payload };
 
     case 'editEmail':
       return { ...state, email: action.payload };
@@ -79,9 +79,12 @@ const Sightings = () => {
     e.preventDefault();
     const newSightings = {
       id: state.id,
-      nick_name: state.nick_name,
-      seen_on: state.seen_on,
-      species_id: state.species_id
+      date_name: state.date_time,
+      location: state.location,
+      healthy: state.healthy,
+      individual_id: state.individual_id,
+      created_on: state.created_on,
+      email: state.email,
     };
 
     const response = await fetch('http://localhost:5001/sightings', {
@@ -189,7 +192,7 @@ const Sightings = () => {
                 type="text"
                 id="editLocation"
                 placeholder="Location"
-                value={state.seen_on}
+                value={state.location}
                 onChange={(e) =>
                   dispatch({
                     type: "editLocation",
@@ -230,9 +233,9 @@ const Sightings = () => {
               <br />
               <label>Created On: </label>
               <input
-                type="date"
+                type="datetime-local"
                 id="editCreatedOn"
-                value={state.healthy}
+                value={state.created_on}
                 onChange={(e) =>
                   dispatch({
                     type: "editCreatedOn",
