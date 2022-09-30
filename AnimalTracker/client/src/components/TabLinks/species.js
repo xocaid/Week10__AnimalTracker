@@ -9,8 +9,8 @@ function Species() {
     fetch("http://localhost:5001/species")
       .then((response) => response.json())
       .then((species) => {
-            setSpecies(species);
-          });
+        setSpecies(species);
+      });
   }, []);
 
   //ADD SPECIES
@@ -18,22 +18,23 @@ function Species() {
     setSpecies((species) => [...species, newSingularSpecies]);
   };
 
-    //DELETE SPECIES - EVENT HANDLER
-    const handleDeleteSpeciesP = async (deleteSpeciesCallback) => {
-      const response = await fetch(`http://localhost:5001/species/${deleteSpeciesCallback}`, {
-        method: 'DELETE',
-      })
-      await response.json();
-      const deleteSpeciesFunction = species.filter((i) => i.id !== deleteSpeciesCallback);
-      setSpecies(deleteSpeciesFunction);
-    };
+  //DELETE SPECIES - EVENT HANDLER
+  const handleDeleteSpeciesP = async (deleteSpeciesCallback) => {
+    const response = await fetch(`http://localhost:5001/species/${deleteSpeciesCallback}`, {
+      method: 'DELETE',
+    })
+    await response.json();
+    const deleteSpeciesFunction = species.filter((i) => i.id !== deleteSpeciesCallback);
+    setSpecies(deleteSpeciesFunction);
+  };
 
   return (
     <div className="species">
       <h2> List of Species </h2>
-      <table className ="species-table">
+      <table className="species-table">
         <thead>
           <tr>
+            <th>ID</th>
             <th>Species Name</th>
             <th>Type</th>
             <th> Population</th>
@@ -45,20 +46,20 @@ function Species() {
           </tr>
         </thead>
         <tbody>
-        {species.map((singSpecies) => (
-          <tr key={singSpecies.id}>
-            <td>{singSpecies.name} </td>
-            <td>{singSpecies.type} </td>
-            <td> {singSpecies.population}</td>
-            <td> {singSpecies.conservation_status}</td>
-            <td> {singSpecies.created_on}</td>
-            {/* <td><button onClick={() => handleDeleteSpecies1(singSpecies.id)}>Delete User</button></td> */}
-            <td><img src={trash} className="trash-icon" alt = "trash-icon" onClick={() => handleDeleteSpeciesP(singSpecies.id)} /></td>
-            <td><button>Edit</button></td>
-          </tr>
-        ))}
+          {species.map((singSpecies, index) => (
+            <tr key={index}>
+              <td>{singSpecies.id} </td>
+              <td>{singSpecies.name} </td>
+              <td>{singSpecies.type} </td>
+              <td> {singSpecies.population}</td>
+              <td> {singSpecies.conservation_status}</td>
+              <td> {singSpecies.created_on}</td>
+              <td><img src={trash} className="trash-icon" alt="trash-icon" onClick={() => handleDeleteSpeciesP(singSpecies.id)} /></td>
+              <td><button>Edit</button></td>
+            </tr>
+          ))}
         </tbody>
-  </table>
+      </table>
       <SpeciesForm addSpecies={addSpecies} />
     </div>
   );
