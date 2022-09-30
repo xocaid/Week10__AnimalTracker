@@ -47,6 +47,12 @@ const SpeciesForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     postSpecies(speciesForm);
+    setSpeciesForm({
+      name: "",
+      type: "",
+      population: "",
+      created_on: "",
+    })
   };
 
   return (

@@ -10,7 +10,7 @@ import Home from "./components/TabLinks/home";
 import Species from './components/TabLinks/species';
 import Individuals from './components/TabLinks/individuals';
 import Sightings from './components/TabLinks/sightings';
-import JoinedInformation from './components/TabLinks/joinInformation';
+import JoinedInformation from './components/TabLinks/summary';
 
 
 function App() {

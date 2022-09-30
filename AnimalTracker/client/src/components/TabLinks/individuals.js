@@ -98,7 +98,7 @@ const Individuals = () => {
         <table className="individuals-table">
           <thead>
             <tr className='table-heading'>
-              <th>ID</th>
+              <th>Individuals ID</th>
               <th>Nick Name</th>
               <th>Seen On</th>
               <th>Species ID</th>

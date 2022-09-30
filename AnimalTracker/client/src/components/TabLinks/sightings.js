@@ -120,7 +120,7 @@ const Sightings = () => {
         <table className="sightings-table">
           <thead>
             <tr className='table-heading'>
-              <th>ID</th>
+              <th>Sightings ID</th>
               <th>Date and Time</th>
               <th>Location</th>
               <th>Healthy</th>

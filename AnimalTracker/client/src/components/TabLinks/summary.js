@@ -21,13 +21,13 @@ function JoinedInformation() {
       <table className="summary-table">
         <thead>
           <tr className='table-heading'>
-            <th>ID</th>
-            <th>Name</th>
-            <th> Type</th>
-            <th>Nickname </th>
+            <th>Species ID</th>
+            <th>SpeciesName</th>
+            <th> Species Type</th>
+            <th>Individuals Name </th>
             <th>Location</th>
             <th>Healthy</th>
-            <th>Email</th>
+            <th>Individuals Email</th>
             <th></th>
 
           </tr>

@@ -35,7 +35,7 @@ function Species() {
       <table className="species-table">
         <thead>
           <tr className='table-heading'>
-            <th>ID</th>
+            <th>Species ID</th>
             <th>Species Name</th>
             <th>Type</th>
             <th> Population</th>
@@ -59,7 +59,9 @@ function Species() {
           ))}
         </tbody>
       </table>
-      <h3>Add Species</h3>
+      <h3>Add Species
+        
+      </h3>
       <SpeciesForm addSpecies={addSpecies} />
     </div>
   );
