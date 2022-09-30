@@ -1,5 +1,6 @@
 import { useState, useReducer, useEffect } from "react";
 import trash from "../trash.png";
+import edit from "../edit.png";
 
 const reducer = (state, action) => {
   console.log(action, 'this is the action');
@@ -118,7 +119,7 @@ const Sightings = () => {
         <h3>All Sightings</h3>
         <table className="sightings-table">
           <thead>
-            <tr>
+            <tr className='table-heading'>
               <th>ID</th>
               <th>Date and Time</th>
               <th>Location</th>
@@ -127,7 +128,6 @@ const Sightings = () => {
               <th>Created On</th>
               <th>Email</th>
               <th></th>
-              <th>Edit Placeholder</th>
             </tr>
           </thead>
           <tbody>
@@ -144,8 +144,8 @@ const Sightings = () => {
                   {/* <td>{sighting.created_on} </td> */}
                   <td>{new Date(sighting.created_on).toLocaleString()}</td>
                   <td>{sighting.email} </td>
-                  <td><img src={trash} className="trash-icon" alt = "trash-icon" onClick={() => handleDeleteSightings(sighting.id)} /></td>
-                  <td><button>Edit</button></td>
+                  <td><img src={trash} className="trash-icon" alt="trash-icon" onClick={() => handleDeleteSightings(sighting.id)} />
+                    <img src={edit} className="edit-icon" alt="edit-icon" /> </td>
                 </tr>
               );
             })}
@@ -153,7 +153,7 @@ const Sightings = () => {
         </table>
         <div className="addsightingsdiv">
           <h3>Add Sightings</h3>
-          <form id="add-sightings" action="#" onSubmit={handleAddSightings}>
+          <form id="add-sightings"className="formborder" action="#" onSubmit={handleAddSightings}>
             <fieldset>
               <label>ID: </label>
               <input
@@ -266,7 +266,7 @@ const Sightings = () => {
           </form>
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 export default Sightings;

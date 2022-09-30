@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import SpeciesForm from '../speciesForm';
 import trash from "../trash.png";
+import edit from "../edit.png";
 
 function Species() {
   const [species, setSpecies] = useState([]);
@@ -33,7 +34,7 @@ function Species() {
       <h2> List of Species </h2>
       <table className="species-table">
         <thead>
-          <tr>
+          <tr className='table-heading'>
             <th>ID</th>
             <th>Species Name</th>
             <th>Type</th>
@@ -41,8 +42,6 @@ function Species() {
             <th>Conservation Status </th>
             <th>Created On </th>
             <th></th>
-            <th>Edit Placeholder</th>
-
           </tr>
         </thead>
         <tbody>
@@ -54,12 +53,13 @@ function Species() {
               <td> {singSpecies.population}</td>
               <td> {singSpecies.conservation_status}</td>
               <td> {singSpecies.created_on}</td>
-              <td><img src={trash} className="trash-icon" alt="trash-icon" onClick={() => handleDeleteSpeciesP(singSpecies.id)} /></td>
-              <td><button>Edit</button></td>
+              <td><img src={trash} className="trash-icon" alt="trash-icon" onClick={() => handleDeleteSpeciesP(singSpecies.id)} />
+                <img src={edit} className="edit-icon" alt="edit-icon" />  </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <h3>Add Species</h3>
       <SpeciesForm addSpecies={addSpecies} />
     </div>
   );

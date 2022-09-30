@@ -1,5 +1,6 @@
 import { useState, useReducer, useEffect } from "react";
 import trash from "../trash.png";
+import edit from "../edit.png";
 
 const reducer = (state, action) => {
   console.log(action, 'this is the action');
@@ -96,13 +97,12 @@ const Individuals = () => {
         <h3>All Individuals</h3>
         <table className="individuals-table">
           <thead>
-            <tr>
+            <tr className='table-heading'>
               <th>ID</th>
               <th>Nick Name</th>
               <th>Seen On</th>
               <th>Species ID</th>
               <th></th>
-              <th>Edit Placeholder</th>
             </tr>
           </thead>
           <tbody>
@@ -114,8 +114,8 @@ const Individuals = () => {
                   <td> {individual.nick_name} </td>
                   <td>{individual.seen_on} </td>
                   <td>{individual.species_id} </td>
-                  <td><img src={trash} className="trash-icon" alt = "trash-icon"onClick={() => handleDeleteIndividuals(individual.id)} /></td>
-                  <td><button>Edit</button></td>
+                  <td><img src={trash} className="trash-icon" alt="trash-icon" onClick={() => handleDeleteIndividuals(individual.id)} />
+                    <img src={edit} className="edit-icon" alt="edit-icon" />  </td>
                 </tr>
               );
             })}
@@ -123,7 +123,7 @@ const Individuals = () => {
         </table>
         <div className="addindividualsdiv">
           <h3>Add Individuals</h3>
-          <form id="add-individuals" action="#" onSubmit={handleAddIndivduals}>
+          <form id="add-individuals" className="formborder" action="#" onSubmit={handleAddIndivduals}>
             <fieldset>
               <label>ID: </label>
               <input

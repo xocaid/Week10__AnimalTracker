@@ -1,7 +1,9 @@
-const Header = () =>{
+const Header = () => {
   return (
     <header>
-      <h1>Animal Tracker</h1>
+      <div className="header">
+        <h1>Animal Tracker</h1>
+      </div>
     </header>
   );
 };

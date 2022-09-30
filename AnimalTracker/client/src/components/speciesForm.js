@@ -50,7 +50,7 @@ const SpeciesForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="formborder" >
       <fieldset>
         <label>Name</label>
         <input

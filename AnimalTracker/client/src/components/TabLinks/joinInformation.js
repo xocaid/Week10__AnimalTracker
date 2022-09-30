@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-// import trash from "../trash.png"; Not in use yet
+import trash from "../trash.png";
+import edit from "../edit.png";
 
 function JoinedInformation() {
   const [joinedInfo, setJoinedInfo] = useState([]);
@@ -17,9 +18,9 @@ function JoinedInformation() {
 
   return (
     <div className='joined-table'>
-      <table className="join-table">
+      <table className="summary-table">
         <thead>
-          <tr>
+          <tr className='table-heading'>
             <th>ID</th>
             <th>Name</th>
             <th> Type</th>
@@ -39,9 +40,10 @@ function JoinedInformation() {
               <td>{join.type} </td>
               <td> {join.nick_name}</td>
               <td> {join.location}</td>
-              <td> {join.healthy}</td>
+              <td> {join.healthy === true ? "True" : "False"}</td>
               <td>{join.email}</td>
-              <td><button>Maybe Delete/Edit</button></td>
+              <td><img src={trash} className="trash-icon" alt="trash-icon" />
+                <img src={edit} className="edit-icon" alt="edit-icon" /> </td>
             </tr>
           ))}
         </tbody>

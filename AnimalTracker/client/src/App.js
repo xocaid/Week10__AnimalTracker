@@ -21,8 +21,9 @@ return (
     <Header />
     <Router>
       <LinkRoutes />
-      <Routes>
-        <Route path="/home" element={<Home />} ></Route>
+      <Routes >
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/joinTable" element={<JoinedInformation />}></Route>
         <Route path="/species" element={<Species />}></Route>
         <Route path="/individuals" element={<Individuals />}></Route>
         <Route path="/sightings" element={<Sightings />}></Route>
@@ -31,7 +32,6 @@ return (
     <br />
     <h2>This is the home page from App.js</h2>
     <br />
-    <JoinedInformation />
     <Footer />
   </>
 );
