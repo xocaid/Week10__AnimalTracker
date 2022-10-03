@@ -7,9 +7,9 @@ import Header from "./components/margins/header.js"
 import Footer from './components/margins/footer';
 import LinkRoutes from "./components/LinkRoutes";
 import Home from "./components/TabLinks/home";
-import Species from './components/TabLinks/species';
-import Individuals from './components/TabLinks/individuals';
-import Sightings from './components/TabLinks/sightings';
+import Species from './components/TabLinks/Species/species';
+import Individuals from './components/TabLinks/Individuals/individuals';
+import Sightings from './components/TabLinks/Sightings/sightings';
 import JoinedInformation from './components/TabLinks/summary';
 
 

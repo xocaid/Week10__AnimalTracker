@@ -1,6 +1,6 @@
 import { useState, useReducer, useEffect } from "react";
-import trash from "../trash.png";
-import edit from "../edit.png";
+import trash from "../../trash.png";
+import edit from "../../edit.png";
 
 const reducer = (state, action) => {
   console.log(action, 'this is the action');

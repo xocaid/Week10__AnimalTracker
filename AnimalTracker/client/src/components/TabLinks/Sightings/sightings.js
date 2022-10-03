@@ -1,6 +1,6 @@
 import { useState, useReducer, useEffect } from "react";
-import trash from "../trash.png";
-import edit from "../edit.png";
+import trash from "../../trash.png";
+import edit from "../../edit.png";
 
 const reducer = (state, action) => {
   console.log(action, 'this is the action');
@@ -136,12 +136,10 @@ const Sightings = () => {
               return (
                 <tr key={index}>
                   <td>{sighting.id} </td>
-                  {/* <td>{sighting.date_time} </td> */}
                   <td>{new Date(sighting.date_time).toLocaleString()}</td>
                   <td>{sighting.location} </td>
                   <td>{sighting.healthy === true ? "True" : "False"} </td>
                   <td>{sighting.individual_id} </td>
-                  {/* <td>{sighting.created_on} </td> */}
                   <td>{new Date(sighting.created_on).toLocaleString()}</td>
                   <td>{sighting.email} </td>
                   <td><img src={trash} className="trash-icon" alt="trash-icon" onClick={() => handleDeleteSightings(sighting.id)} />

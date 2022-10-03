@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react';
-import SpeciesForm from '../speciesForm';
-import trash from "../trash.png";
-import edit from "../edit.png";
+import SpeciesForm from './speciesForm';
+import trash from "../../trash.png";
+import edit from "../../edit.png";
 
 function Species() {
   const [species, setSpecies] = useState([]);
+
+  //Added for curentSpecies useState
+  const values = { id: '', name: '', type: '', population: '',conservation_status:'',created_on:'' };
+  //Edit Species Input
+const [editingSpecies, setEditingSpecies] = useState(false);
+const [currentSpecies, setCurrentSpecies] = useState(values);
 
   useEffect(() => {
     fetch("http://localhost:5001/species")
@@ -14,8 +20,8 @@ function Species() {
       });
   }, []);
 
-  //ADD SPECIES
-  const addSpecies = (newSingularSpecies) => {
+  //ADD SPECIES - EVENT HANDLER
+  const handleAddSpecies = (newSingularSpecies) => {
     setSpecies((species) => [...species, newSingularSpecies]);
   };
 
@@ -28,6 +34,21 @@ function Species() {
     const deleteSpeciesFunction = species.filter((i) => i.id !== deleteSpeciesCallback);
     setSpecies(deleteSpeciesFunction);
   };
+
+  //EDIT SPECIES - EVENT HANDLER
+  // function editSpecies(specie) {
+  //   setEditingSpecies(true);
+  //   setCurrentSpecies({ ...specie });
+  // }
+  // function updateSpecies(id, updatedSpecies) {
+  //   setUsers(species.map((specie) => (specie.id === id ? updatedSpecies : specie)));
+  // }
+  // function handleEditSubmit(updatedSpecies) {
+  //   updateSpecies(currentSpecies.id, updatedSpecies);
+  //   setCurrentSpecies(values);
+  //   setEditingSpecies(false);
+  // }
+
 
   return (
     <div className="species">
@@ -62,7 +83,7 @@ function Species() {
       <h3>Add Species
         
       </h3>
-      <SpeciesForm addSpecies={addSpecies} />
+      <SpeciesForm addSpecies={handleAddSpecies} />
     </div>
   );
 }
