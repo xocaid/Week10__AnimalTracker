@@ -6,7 +6,7 @@ import "./App.css";
 import Header from "./components/margins/header.js"
 import Footer from './components/margins/footer';
 import LinkRoutes from "./components/LinkRoutes";
-import Home from "./components/TabLinks/home";
+import Home from "./components/TabLinks/home.js";
 import Species from './components/TabLinks/Species/species';
 import Individuals from './components/TabLinks/Individuals/individuals';
 import Sightings from './components/TabLinks/Sightings/sightings';
@@ -22,6 +22,7 @@ return (
     <Router>
       <LinkRoutes />
       <Routes >
+      <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/joinTable" element={<JoinedInformation />}></Route>
         <Route path="/species" element={<Species />}></Route>
@@ -30,7 +31,7 @@ return (
       </Routes>
     </Router>
     <br />
-    <h2>This is the home page from App.js</h2>
+
     <br />
     <Footer />
   </>

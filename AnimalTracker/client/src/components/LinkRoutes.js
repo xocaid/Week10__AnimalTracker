@@ -13,7 +13,7 @@ const LinkRoutes = () => {
     <>
       <div>
 
-        <Link to="/" style={linkStyle}> Home</Link>
+        <Link to="/home" style={linkStyle}> Home</Link>
 
         <Link to="/joinTable"style={linkStyle}> Summary</Link>
 
