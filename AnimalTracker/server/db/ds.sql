@@ -1,4 +1,4 @@
--- TERMINAL COMMAND: pg_dump -d nameOfDatabase;
+-- TERMINAL COMMAND: pg_dump -d nameOfDatabase; 
 -- Purpose: pg_dump creates a back-up of your database by extracting it(database) into a script file.
 -- Create nameOfFile.sql file(in db folder) on server side, paste & save pg_dump script file, need to comment out info after "SET"
 -- PostgreSQL database dump
