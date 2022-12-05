@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-const Form = (props) => {
+
+const SpeciesForm = (props) => {
   const [speciesForm, setSpeciesForm] = useState({
     name: "",
     type: "",
@@ -46,10 +47,16 @@ const Form = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     postSpecies(speciesForm);
+    setSpeciesForm({
+      name: "",
+      type: "",
+      population: "",
+      created_on: "",
+    })
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="formborder" >
       <fieldset>
         <label>Name</label>
         <input
@@ -99,4 +106,4 @@ const Form = (props) => {
   );
 };
 
-export default Form;
+export default SpeciesForm;
